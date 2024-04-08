@@ -101,9 +101,8 @@ class LocalSearchManager: RCTEventEmitter {
     request.resultTypes.insert(.pointOfInterest)
 
     // Add a filter on the Category of the place
-    var allTypes = typesToDrink
-    allTypes.append(contentsOf: typesToEat)
-
+    var allTypes = typesToEat
+    
     let filter = MKPointOfInterestFilter(including: allTypes)     
     request.pointOfInterestFilter = filter
     
