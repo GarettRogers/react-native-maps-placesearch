@@ -1,6 +1,6 @@
 {
   "name": "react-native-maps-placesearch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use the native iOS MKLocalSearch API to search for places",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
