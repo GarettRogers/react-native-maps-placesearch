@@ -5,8 +5,7 @@ import Contacts
 
 @objc(LocalSearchManager)
 class LocalSearchManager: RCTEventEmitter {
-  private let typesToDrink: [MKPointOfInterestCategory] = [.brewery, .cafe, .winery]
-  private let typesToEat: [MKPointOfInterestCategory] = [.foodMarket, .restaurant]
+  private let typesToEat: [MKPointOfInterestCategory] = [.restaurant]
 
   var searchCompleter = MKLocalSearchCompleter()
   var searchLocationResolver: RCTPromiseResolveBlock?
@@ -42,9 +41,8 @@ class LocalSearchManager: RCTEventEmitter {
     let poiRequest: MKLocalPointsOfInterestRequest = MKLocalPointsOfInterestRequest(center: region.center, radius: 3_000)
     
     // Add a filter on the Category of the place
-    var allTypes = typesToDrink
-    allTypes.append(contentsOf: typesToEat)
-
+    var allTypes = typesToEat
+    
     let filter = MKPointOfInterestFilter(including: allTypes)     
     poiRequest.pointOfInterestFilter = filter
 
